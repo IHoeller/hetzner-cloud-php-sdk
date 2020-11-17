@@ -123,6 +123,11 @@ class Server extends Model implements Resource
     public $primaryDiskSize;
 
     /**
+     * @var array
+     */
+    public $loadBalancers
+
+    /**
      * @param int $serverId
      * @param Client|null $httpClient
      */
@@ -157,6 +162,7 @@ class Server extends Model implements Resource
         $this->protection = $data->protection ?: Protection::parse($data->protection);
         $this->labels = $data->labels;
         $this->primaryDiskSize = $data->primary_disk_size ?: null;
+        $this->loadBalancers = $data->load_balancers;
 
         return $this;
     }
