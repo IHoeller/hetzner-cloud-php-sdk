@@ -125,7 +125,7 @@ class Server extends Model implements Resource
     /**
      * @var array
      */
-    public $loadBalancers
+    public $loadBalancers;
 
     /**
      * @param int $serverId
